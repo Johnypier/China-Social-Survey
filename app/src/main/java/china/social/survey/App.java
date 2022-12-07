@@ -1,6 +1,5 @@
 package china.social.survey;
 
-import java.io.File;
 import java.util.List;
 import java.util.Random;
 
@@ -17,8 +16,6 @@ import javafx.scene.layout.BackgroundRepeat;
 import javafx.scene.layout.BackgroundSize;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
-import javafx.scene.media.Media;
-import javafx.scene.media.MediaPlayer;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
@@ -64,13 +61,6 @@ public class App extends Application {
                 primaryStage.getIcons()
                                 .add(new Image(getClass().getClassLoader().getResourceAsStream("china-icon.png")));
 
-                // var media = new
-                // Media(getClass().getClassLoader().getResource("RedSunInTheSky.mp3").toURI().toString());
-                // var mediaPlayer = new MediaPlayer(media);
-                // mediaPlayer.setAutoPlay(true);
-                // mediaPlayer.setVolume(0.05);
-                // mediaPlayer.setCycleCount(MediaPlayer.INDEFINITE);
-
                 var imageView = new ImageView(
                                 new Image(getClass().getClassLoader().getResourceAsStream("Wok.jpg"), imageWidth,
                                                 imageHeight, true,
@@ -84,11 +74,6 @@ public class App extends Application {
                                 + "-fx-font-weight: bold;" + "-fx-alignment: center;");
 
                 var buttonsCSSPath = getClass().getResource("Buttons.css").toString();
-                var mute = new Button("Turn Audio OFF");
-                mute.getStylesheets().add(buttonsCSSPath);
-                var unmute = new Button("Turn Audio ON");
-                unmute.getStylesheets().add(buttonsCSSPath);
-                unmute.setDisable(true);
                 var firstQuestion = new Button("Wok");
                 firstQuestion.getStylesheets().add(buttonsCSSPath);
                 var secondQuestion = new Button("American Hero");
@@ -98,16 +83,6 @@ public class App extends Application {
                 var restart = new Button("Restart");
                 restart.getStylesheets().add(buttonsCSSPath);
 
-                mute.setOnAction(action -> {
-                        // mediaPlayer.setMute(true);
-                        unmute.setDisable(false);
-                        mute.setDisable(true);
-                });
-                unmute.setOnAction(action -> {
-                        // mediaPlayer.setMute(false);
-                        unmute.setDisable(true);
-                        mute.setDisable(false);
-                });
                 firstQuestion.setOnAction(action -> {
                         evaluateAnswer(question, firstQuestion, secondQuestion, thirdQuestion, imageView, plusCredits);
                         correctAnswers++;
@@ -131,9 +106,6 @@ public class App extends Application {
                         }
                 });
 
-                var upperButtonsHBox = new HBox(mute, unmute);
-                upperButtonsHBox.setAlignment(Pos.CENTER);
-                upperButtonsHBox.setSpacing(10);
                 var bottomButtonsHBox = new HBox(firstQuestion, secondQuestion, thirdQuestion);
                 bottomButtonsHBox.setAlignment(Pos.CENTER);
                 bottomButtonsHBox.setSpacing(10);
