@@ -1,5 +1,6 @@
 package china.social.survey;
 
+import java.io.File;
 import java.util.List;
 import java.util.Random;
 
@@ -63,11 +64,12 @@ public class App extends Application {
                 primaryStage.getIcons()
                                 .add(new Image(getClass().getClassLoader().getResourceAsStream("china-icon.png")));
 
-                var media = new Media(getClass().getClassLoader().getResource("Red Sun In The Sky.mp3").toString());
-                var mediaPlayer = new MediaPlayer(media);
-                mediaPlayer.setAutoPlay(true);
-                mediaPlayer.setVolume(0.05);
-                mediaPlayer.setCycleCount(MediaPlayer.INDEFINITE);
+                // var media = new
+                // Media(getClass().getClassLoader().getResource("RedSunInTheSky.mp3").toURI().toString());
+                // var mediaPlayer = new MediaPlayer(media);
+                // mediaPlayer.setAutoPlay(true);
+                // mediaPlayer.setVolume(0.05);
+                // mediaPlayer.setCycleCount(MediaPlayer.INDEFINITE);
 
                 var imageView = new ImageView(
                                 new Image(getClass().getClassLoader().getResourceAsStream("Wok.jpg"), imageWidth,
@@ -97,12 +99,12 @@ public class App extends Application {
                 restart.getStylesheets().add(buttonsCSSPath);
 
                 mute.setOnAction(action -> {
-                        mediaPlayer.setMute(true);
+                        // mediaPlayer.setMute(true);
                         unmute.setDisable(false);
                         mute.setDisable(true);
                 });
                 unmute.setOnAction(action -> {
-                        mediaPlayer.setMute(false);
+                        // mediaPlayer.setMute(false);
                         unmute.setDisable(true);
                         mute.setDisable(false);
                 });
@@ -135,7 +137,7 @@ public class App extends Application {
                 var bottomButtonsHBox = new HBox(firstQuestion, secondQuestion, thirdQuestion);
                 bottomButtonsHBox.setAlignment(Pos.CENTER);
                 bottomButtonsHBox.setSpacing(10);
-                var mainVBox = new VBox(upperButtonsHBox, imageView, question, bottomButtonsHBox, restart);
+                var mainVBox = new VBox(imageView, question, bottomButtonsHBox, restart);
                 mainVBox.setAlignment(Pos.CENTER);
                 mainVBox.setSpacing(20);
                 mainVBox.setBackground(new Background(new BackgroundImage(new Image(getClass().getClassLoader()
