@@ -10,7 +10,6 @@
   </ul>
   <h2>How to run the application?</h2>
     <ul align=left>
-    <li>"Executable" folder contains jar file, which will launch the application if you have necessary jdk installed.</li>
-    <li>Javafx libraries are included, so you don't have to install sdk too.</li>
+    <li>Open the terminal and use the command "gradle run" or "./gradlew run" if you don't have gradle installed.</li>
   </ul>
 </div>
