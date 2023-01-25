@@ -1,5 +1,6 @@
 .gradle
 /build/
+.vscode/*
 
 # Ignore Gradle GUI config
 gradle-app.setting
@@ -12,3 +13,9 @@ gradle-app.setting
 
 # # Work around https://youtrack.jetbrains.com/issue/IDEA-116898
 # gradle/wrapper/gradle-wrapper.properties
+
+# Local History for Visual Studio Code
+.history/
+
+# Built Visual Studio Code Extensions
+*.vsix
